@@ -34,7 +34,7 @@ var burger = {
 
 	},
 	 updateBurger: function ( name,condition , cb) {
-    orm.updateBurger("BURGERS",name , condition, function (res) {
+    orm.updateBurger('burgers',name , condition, function (res) {
       cb(res);
     });
   }
