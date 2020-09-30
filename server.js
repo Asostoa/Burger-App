@@ -3,8 +3,7 @@ const bodyParser = require("body-parser");
 
 let app = express();
 
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
+
 let PORT = process.env.PORT || 8080;
 
 // Serve static content for the app from the "public" directory in the application directory.
