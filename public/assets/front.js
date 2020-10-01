@@ -19,26 +19,26 @@ $(document).ready(function() {
   
 
 	});	
-	 $("#updateBurger").on("submit", function (event) {
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-    // Get the ID by finding an element with a "name" attribute equal to the string "id"
-    var id = $("[name=id]").val().trim();
-    var updatedBurger = {
-      name: $("#updateBurger [name=updateBurger]").val().trim()
-    };
-    // Send the PUT request.
-    $.ajax("/api/update/burgers/" + id, {
-      type: "PUT",
-      data: updatedBurger
-    }).then(
-      function () {
-        console.log("updated id ", id);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
+	$("#updateBurger").on("submit", function (event) {
+		// Make sure to preventDefault on a submit event.
+		event.preventDefault();
+		// Get the ID by finding an element with a "name" attribute equal to the string "id"
+		var id = $("[name=id]").val().trim();
+		var updatedBurger = {
+		  name: $("#updateBurger [name=updateBurger]").val().trim()
+		};
+		// Send the PUT request.
+		$.ajax("/api/update/burgers/:id" + id, {
+		  type: "PUT",
+		  data: updatedBurger
+		}).then(
+		  function () {
+			console.log("updated id ", id);
+			// Reload the page to get the updated list
+			location.reload();
+		  }
+		);
+	  });
 	$('.devour-button').on('click', function() {
 
 		var devourData = {

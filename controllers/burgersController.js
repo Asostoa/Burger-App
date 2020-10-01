@@ -20,9 +20,9 @@ router.put("/api/update/burgers/:id", function(req, res) {
   const condition = "id = " + req.params.id;
   console.log("condition", condition);
   console.log(req.body);
-  burger.update(
+  burger.updateBurger(
     {
-      name: req.body.name,
+      name: req.body.burger_name,
     },
     condition,
     function (result) {
@@ -43,11 +43,11 @@ router.post('/burger/create', function (req, res) {
 });
 //modify a burger
 router.post('/burger/modify', function (req, res) {
-  burger.modifyOne(req.body.burger_name, function() {
+  burger.updateBurger(req.body.burger_name, function() {
     res.redirect('/');
   });
 });
-// Devour a Burger
+//Devour a Burger
 router.post('/burger/eat', function (req, res) {
   burger.updateOne(req.body.id, function() {
     res.redirect('/');

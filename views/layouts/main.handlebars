@@ -6,12 +6,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"
-    integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
-    crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"
-    integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
-    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/7ac1a23662.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
 </head>
@@ -42,24 +37,40 @@
             <div class="form-group">
               <label for="new_burger"></label>
               <textarea class="form-control" rows="4" id="new_burger" name="burger_name"></textarea>
-              <button id="submit-button" type="submit" class="btn btn-danger mx-auto mt-4"><i
-                  class="fas fa-utensils"></i> Order!</button>
+              <button id="submit-button" type="submit" class="btn btn-outline-danger mx-auto mt-4"><i
+                  class="fas fa-hamburger"></i> Order!</button>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-3"></div>
     </div>
-    <form id="updateBurger" class="button-size">
-      <textarea id="textAreaUpdate" type="text" name="updateBurger" placeholder="Burger"></textarea>
-      <select name="id">
-        {{#each burgers}}
-        <option value="{{this.id}}">{{this.burger_name}}</option>
-        {{/each}}
-      </select>
-      <button id="updateBurgerBtn" type="submit">Update Burger!!</button>
-    </form>
+
     {{{body}}}
+
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="card my-4">
+          <h5 class="card-header text-center">Modify your order!</h5>
+          <div class="card-body">
+            <div class="form-group">
+              <form id="updateBurger" class="button-size">
+                <textarea id="textAreaUpdate" type="text" name="updateBurger" placeholder="Burger"></textarea>
+                <select name="id">
+                  {{#each burgers}}
+                  <option value="{{this.id}}">{{this.burger_name}}</option>
+                  {{/each}}
+                </select>
+                <button id="submit-button" type="submit" class="btn btn-outline-danger mx-auto mt-4"><i
+                  class="fas fa-hamburger"></i>Update Order!</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
