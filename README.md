@@ -1,4 +1,4 @@
-# burger-app
+# Burger-App
 
 ![Badge](https://img.shields.io/github/license/Asostoa/burger-app)
 ![BadgeGithub](https://img.shields.io/github/followers/asostoa?style=social)
